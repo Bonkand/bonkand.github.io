@@ -24,6 +24,7 @@
 }
 .star {
  color: yellow;
+ margin: auto;
  animation-name: blink;
  max-width: 1%;
  animation-duration: 2s;
