@@ -8,6 +8,7 @@
 .star {
  color: yellow;
  animation-name: blink;
+ width: 100%;
  animation-duration: 2s;
 animation-iteration-count: infinite;
 }
