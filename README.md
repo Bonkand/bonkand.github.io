@@ -1,5 +1,5 @@
-# prizafal.com
-This is my personal website that is shown at https://prizafal.com. I forked this from AlexFlipnote and edited it to make it partially my own using a fair chunk of his code.
+# bonkand.github.io
+This is my personal website that is shown at https://bonkand.gitgub.io. I forked this from AlexFlipnote and prizafal and edited it to make it partially my own using a fair chunk of their code.
 
 ## Requirements
 - Python 3.6 or above
