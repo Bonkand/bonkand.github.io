@@ -5,6 +5,17 @@
     font-style: normal
 }
 
+.star {
+ color: yellow;
+ animation-name: blink;
+ animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+@keyframes blink {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .minecraftFont {
     font-family: "minecraftFont";
     color: #CEB4A0
