@@ -6,9 +6,9 @@
             <title>Bonkand 👋</title>
     </head>
     <body>
-        <p style="text-align: justify;">Welcome to my countdowns™<br /><br />they are cool i swer</p><br></br> 
-        <p id="christmas-countdown"></p>
+        <p style="text-align: justify;">Welcome to my countdowns™<br /><br />they are cool i swer</p><br>
         <p id="november-23rd-countdown"></p>
+        <p id="christmas-countdown"></p>
         <p id="new-years-eve-countdown"></p>
 
         <script>
@@ -26,11 +26,16 @@
 }
 
 setInterval(updateChristmasCountdown, 1000);
-       
-                // Countdown for November 23rd
+       // Countdown for November 23rd
 function updateNovember23rdCountdown() {
   const now = new Date();
   const november23rd = new Date(2024, 10, 23);
+
+  if (now >= november23rd) {
+    // Target date has been reached, reset for next year
+    november23rd.setFullYear(november23rd.getFullYear() + 1);
+  }
+
   const daysUntilNovember23rd = Math.ceil((november23rd - now) / (1000 * 60 * 60 * 24));
 
   document.getElementById("november-23rd-countdown").innerHTML = `${daysUntilNovember23rd} days until my birthday`;
@@ -41,7 +46,13 @@ setInterval(updateNovember23rdCountdown, 1000);
 // Countdown for New Year's Eve
 function updateNewYearsEveCountdown() {
   const now = new Date();
-  const newYearsEve = new Date(2025, 11, 31);
+  const newYearsEve = new Date(2024, 11, 31);
+
+  if (now >= newYearsEve) {
+    // Target date has been reached, reset for next year
+    newYearsEve.setFullYear(newYearsEve.getFullYear() + 1);
+  }
+
   const daysUntilNewYearsEve = Math.ceil((newYearsEve - now) / (1000 * 60 * 60 * 24));
 
   document.getElementById("new-years-eve-countdown").innerHTML = `${daysUntilNewYearsEve} days until New Year's Eve`;
