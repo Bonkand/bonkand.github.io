@@ -5,6 +5,23 @@
     font-style: normal
 }
 
+@media (max-width: 800px) {
+  /* Styles for smaller screens */
+  .container {
+    width: 100%;
+  }
+  .box-container {
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-size: 2em;
+  }
+  .buttons a {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+  /* Add more styles as needed */
+}
 .star {
  color: yellow;
  animation-name: blink;
