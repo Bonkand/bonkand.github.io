@@ -1,4 +1,4 @@
-//*!
+/*!
  * Modesta v3.0.6 (https://modesta.alexflipnote.dev)
  * Made by AlexFlipnote (https://alexflipnote.dev)
  * Licensed under MIT (https://github.com/AlexFlipnote/Modesta/blob/master/LICENSE)
@@ -2148,6 +2148,16 @@ form {
     color: #006266
 }
 
+.it1-text {
+    color: #009169
+}
+.it2-text {
+    color: #CE253C
+}
+.bonky-text {
+    color: #CEB4A0
+}
+
 .aqua-blue-bg {
     background-color: #006266
 }
@@ -2321,18 +2331,6 @@ form {
     color: #178747
 }
 
-.it1-text {
-    color: #009169
-}
-
-.it2-text {
-    color: #CE253C
-}
-
-.bonky-text {
-    color: #CEB4A0
-}
-
 .light-blue-text {
     color: rgb(120, 181, 211)
 }
@@ -2360,7 +2358,7 @@ form {
 }
 
 .fuchsia-text {
-    color: #CEB4A0
+    color: #b33771
 }
 
 .fuchsia-bg {
@@ -2425,7 +2423,7 @@ form {
 }
 
 .honey-text {
-    color: #CE253C
+    color: #eab543
 }
 
 .honey-bg {
