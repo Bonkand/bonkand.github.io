@@ -1,5 +1,5 @@
 # bonkand.github.io
-This is my personal website that is shown at https://bonkand.gitgub.io. I forked this from AlexFlipnote and prizafal and edited it to make it partially my own using a fair chunk of their code.
+This is my personal website that is shown at https://bonkand.github.io. I forked this from AlexFlipnote and prizafal and edited it to make it partially my own using a fair chunk of their code.
 
 ## Requirements
 - Python 3.6 or above
