@@ -2211,15 +2211,15 @@ form {
 }
 
 .blurple-text {
-    color: #7289da
+    color: #5865F2
 }
 
 .blurple-bg {
-    background-color: #7289da
+    background-color: #5865F2
 }
 
 .blurple-dropshadow {
-    background-color: #7289da;
+    background-color: #5865F2;
     filter: drop-shadow(5px 5px 0 rgba(114, 137, 218, 0.6))
 }
 
