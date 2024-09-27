@@ -14,7 +14,7 @@
 color: yellow;
 margin: auto;
 animation-name: blink;
-width: 1%;
+width: 100%;
 animation-duration: 2s;
 animation-iteration-count: infinite;
 }
