@@ -118,9 +118,10 @@ html {
 }
 
 .thanks {
-    width: 99%;
+    width: 90%;
     font-size:0.5em;
     margin: auto;
+    text-align: center;
 } 
 a {
     color: #1eaedb
