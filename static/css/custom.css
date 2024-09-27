@@ -103,7 +103,8 @@ html {
 }
 
 .avatar-decoration {
-    position: absolute
+    position: absolute;
+    left: -100px
 }
 
 .image-title {
