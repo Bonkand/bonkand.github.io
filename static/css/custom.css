@@ -123,6 +123,11 @@ html {
     margin: auto;
     text-align: center;
 } 
+
+.disc {
+    font-size:0.75em;
+} 
+
 a {
     color: #1eaedb
 }
