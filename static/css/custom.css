@@ -10,6 +10,17 @@
   to {opacity: 1;}
 }
 
+.star {
+color: yellow;
+margin: auto;
+animation-name: blink;
+width: 1%;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+
+
+
 a { text-decoration: none; }
 
 .minecraftFont {
