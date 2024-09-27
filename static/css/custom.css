@@ -99,7 +99,6 @@ html {
 }
 .avatar-container {
     position: relative;
-    z-index: 1;
 }
 
 .avatar-decoration {
