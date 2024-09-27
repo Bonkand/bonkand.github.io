@@ -105,7 +105,8 @@ html {
 
 .avatar-decoration {
     position: absolute;
-    align-content: start;
+    align-content: flex-start;
+    left: 100px;
 }
 
 .image-title {
