@@ -102,6 +102,10 @@ html {
     position: relative
 }
 
+.avatar-decoration {
+    position: absolute
+}
+
 .image-title {
     position: relative;
     z-index: auto
