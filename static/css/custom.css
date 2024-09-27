@@ -105,7 +105,6 @@ html {
 
 .avatar-decoration {
     position: absolute;
-    /* Other styles... */
     z-index: 2;  /* Higher value, appears on top */
 }
 
