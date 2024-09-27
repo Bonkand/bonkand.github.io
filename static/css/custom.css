@@ -12,7 +12,7 @@
 
 .star {
 color: yellow;
-margin: auto;
+margin: left;
 animation-name: blink;
 max-width: 50%;
 animation-duration: 2s;
