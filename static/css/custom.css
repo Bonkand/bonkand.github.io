@@ -97,24 +97,30 @@ html {
 .info-container {
     padding-left: 2.5em
 }
-
 .avatar-container {
-    background-image: url("https://bonkand.github.io/static/images/avatar.png");
     position: relative;
+    /* Other styles... */
 }
 
 .avatar-decoration {
     position: absolute;
-    z-index: 2;  /* Higher value, appears on top */
+    top: 20px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover; /* Or object-fit: contain */
+    z-index: 2; /* Higher z-index to appear on top */
 }
 
 #discord-avatar {
     position: absolute;
-    /* Other styles... */
-    z-index: 1;  /* Lower value, appears behind */
-}
-
-.image-title {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Lower z-index to appear behind */
+}.image-title {
     position: relative;
     z-index: auto
 }
