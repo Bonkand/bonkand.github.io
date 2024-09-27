@@ -105,8 +105,14 @@ html {
 
 .avatar-decoration {
     position: absolute;
-    align-content: flex-start;
-    left: 100px;
+    /* Other styles... */
+    z-index: 2;  /* Higher value, appears on top */
+}
+
+#discord-avatar {
+    position: absolute;
+    /* Other styles... */
+    z-index: 1;  /* Lower value, appears behind */
 }
 
 .image-title {
