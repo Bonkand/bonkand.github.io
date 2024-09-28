@@ -97,11 +97,12 @@ html {
 .info-container {
     padding-left: 2.5em
 }
+
 .avatar-container {
     position: relative;
 }
 
-.avatar-decoration {
+#avatar-decoration {
     position: absolute;
     z-index: 2;
     top: 100px;
@@ -112,7 +113,7 @@ html {
 }
 
 #discord-avatar { 
-    position: absolute;
+    position: relative;
     z-index: 1;
     top: 0;
     left: 0;
