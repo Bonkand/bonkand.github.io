@@ -99,15 +99,15 @@ html {
 }
 
 .avatar-container {
-    position: absolute;
+    position: relative;
 }
 
-#avatar-decoration {
-    position: absolute;
+.avatar-decoration {
+    position: relative;
     z-index: 2;
 }
 
-#discord-avatar { 
+.discord-avatar { 
     position: absolute;
     z-index: 1;
 }
