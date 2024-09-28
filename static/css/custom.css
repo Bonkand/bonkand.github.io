@@ -102,9 +102,7 @@ html {
 }
 
 .avatar-decoration {
-    position: absolute;
-    z-index: 2; /* Higher z-index to appear on top */
-}
+    position: absolute;}
 
 .image-title {
     position: relative;
