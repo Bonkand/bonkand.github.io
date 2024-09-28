@@ -102,11 +102,13 @@ html {
 }
 
 .avatar-decoration {
-    position: absolute;}
+    position: absolute;
+    z-index: 2;
+}
 
 .image-title {
     position: relative;
-    z-index: auto
+    z-index: 1;
 }
 
 .title {
