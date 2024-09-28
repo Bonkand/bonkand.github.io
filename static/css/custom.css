@@ -97,30 +97,30 @@ html {
 .info-container {
     padding-left: 2.5em
 }
-
-.avatar-container { 
-    position: relative; /* Changed to relative */
-    width: 200px; /* Set a specific width based on your images */
-    height: 200px; /* Set a specific height based on your images */ }
-
-.avatar-decoration { 
-    position: absolute; /* Keep absolute positioning */ 
-    top: 0; /* Stack at the top */ 
-    left: 0; /* Stack to the left */ 
-    z-index: 2; /* Ensure it's on top */
-} 
-.avatar-image { 
-position: absolute; /* Keep absolute positioning */ 
-               top: 0; /* Stack at the top */ 
-               left: 0; /* Stack to the left */ 
-               z-index: 1; /* Ensure it's below the decoration image */ }
-
-.image-title {
-    position: relative; /* Keep absolute positioning */ 
-    top: 0; /* Stack at the top */ 
-    left: 0; /* Stack to the left */ 
-    z-index: 1;
-}
+	.avatar-container { 
+	    position: relative; 
+	    width: 200px; 
+	    height: 200px; 
+	}
+	 
+	.avatar-decoration { 
+	    position: absolute; 
+	    top: 0; 
+	    left: 0; 
+	    z-index: 2; 
+	} 
+	 
+	.avatar-image { 
+	    position: absolute; 
+	    top: 0; 
+	    left: 0; 
+	    z-index: 1; 
+	}
+	 
+	.image-title {
+	    width: 100%; /* Ensure images take full width */
+	    height: auto; /* Maintain aspect ratio */
+	}
 
 .title {
     font-size: 3em;
