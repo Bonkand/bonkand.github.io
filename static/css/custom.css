@@ -97,7 +97,7 @@ html {
 .info-container {
     padding-left: 2.5em
 }
-	.avatar-container { 
+		.avatar-container { 
 	    position: relative; 
 	    width: 200px; 
 	    height: 200px; 
@@ -107,21 +107,21 @@ html {
 	    position: absolute; 
 	    top: 0; 
 	    left: 0; 
-	    z-index: 2; 
+	    z-index: 1; 
 	} 
 	 
 	.avatar-image { 
 	    position: absolute; 
 	    top: 0; 
 	    left: 0; 
-	    z-index: 1; 
+	    z-index: 2; 
 	}
 	 
 	.image-title {
 	    width: 100%; /* Ensure images take full width */
 	    height: auto; /* Maintain aspect ratio */
 	}
-
+	
 .title {
     font-size: 3em;
     margin: 0
