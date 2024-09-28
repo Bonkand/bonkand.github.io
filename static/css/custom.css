@@ -98,6 +98,11 @@ html {
     padding-left: 2.5em
 }
 
+.avatar-container { 
+    position: relative; /* Changed to relative */
+    width: 200px; /* Set a specific width based on your images */
+    height: 200px; /* Set a specific height based on your images */ }
+
 .avatar-decoration { 
     position: absolute; /* Keep absolute positioning */ 
     top: 0; /* Stack at the top */ 
@@ -111,7 +116,7 @@ position: absolute; /* Keep absolute positioning */
                z-index: 1; /* Ensure it's below the decoration image */ }
 
 .image-title {
-    position: absolute; /* Keep absolute positioning */ 
+    position: relative; /* Keep absolute positioning */ 
     top: 0; /* Stack at the top */ 
     left: 0; /* Stack to the left */ 
     z-index: 1;
@@ -228,7 +233,7 @@ footer p span {
     border-radius: 5px;
     border: 3px solid #303030;
     margin-top: .5em !important;
-    position: relative
+    position: absolute
 }
 
 .image-preview img {
