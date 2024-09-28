@@ -104,7 +104,9 @@ html {
 }
 
 .image-title {
-    position: relative;
+    position: absolute; /* Keep absolute positioning */ 
+    top: 0; /* Stack at the top */ 
+    left: 0; /* Stack to the left */ 
     z-index: 1;
 }
 
