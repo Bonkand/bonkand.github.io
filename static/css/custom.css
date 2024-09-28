@@ -107,6 +107,7 @@ html {
 .avatar-decoration { 
     position: absolute;
     z-index: 2;
+    left: 100px;
 }
 
 .image-title {
