@@ -99,7 +99,7 @@ html {
 }
 
 .avatar-decoration {
-    position: relative;
+    position: absolute;
     z-index: 2;
 }
 
