@@ -102,9 +102,9 @@ html {
     position: relative;
 }
 
-.discord-avatar { 
+.avatar-decoration { 
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 .image-title {
