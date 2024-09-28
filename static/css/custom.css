@@ -108,7 +108,7 @@ html {
 }
 
 #discord-avatar { 
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 
