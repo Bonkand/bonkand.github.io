@@ -161,7 +161,7 @@ window.onload = function() {
         "Pizza, pasta, mamma mia",
         "Ciao!",
         "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "i might (am) be stupid"
+        "i might (am) be stupid",
         ];
 
          const randomIndex = Math.floor(Math.random() * texts.length);
