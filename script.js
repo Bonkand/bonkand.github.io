@@ -1,6 +1,5 @@
 window.onload = function() {
-  const texts = [
-            
+  const texts = [         
       	"how are you? actually nvm idrc",
         "todo: add funny comment",
         "As seen on TV!",
@@ -131,7 +130,7 @@ window.onload = function() {
         "Contains simulated goats!",
         "Home-made!",
         "c4t on ,y keyb.ard!~",
-	      "My jee key is broken, jamers",
+        "My jee key is broken, jamers",
         "Get to the coppah!",
         "Board game version available!",
         "Who let the frogs out?",
@@ -145,7 +144,7 @@ window.onload = function() {
         "This sand is sus",
         "Sniff sniff...",
         "Place hanging sign here",
-        "Stay alive!"
+        "Stay alive!",
         "Welcome Dude!",
         "Also try Terraria!",
         "Hello Mr. stalker",
@@ -165,6 +164,6 @@ window.onload = function() {
         "i might (am) be stupid"
         ];
 
-        const randomIndex = Math.floor(Math.random() * texts.length);
-        document.getElementById('random-texts').innerText = texts[randomIndex];
+         const randomIndex = Math.floor(Math.random() * texts.length);
+    document.getElementById("random-texts").innerText = texts[randomIndex];
 };
