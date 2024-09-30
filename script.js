@@ -1,6 +1,8 @@
 window.onload = function() {
   const texts = [    
         "Hey, Ya!",
+        "now you can't unsee it!",
+        "Another one bites the dust",
         "Encountered a shiny pokemon!",
       	"how are you? actually nvm idrc",
         "todo: add funny comment",
