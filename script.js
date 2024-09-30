@@ -166,5 +166,5 @@ window.onload = function() {
         ];
 
         const randomIndex = Math.floor(Math.random() * texts.length);
-        document.getElementById('description idk').innerText = texts[randomIndex];
+        document.getElementById('random-texts').innerText = texts[randomIndex];
 };
