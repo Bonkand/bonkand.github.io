@@ -1,5 +1,6 @@
 window.onload = function() {
-  const texts = [         
+  const texts = [    
+        "Hey, Ya!",
       	"how are you? actually nvm idrc",
         "todo: add funny comment",
         "As seen on TV!",
@@ -83,7 +84,7 @@ window.onload = function() {
         "Déjà vu!",
         "Déjà vu!",
         "put on wax take off wax",
-        "Rocky dad!"
+        "Rocky dad!",
         "Got your nose!",
         "Haley loves Elan!",
         "Afraid of the big, black bat!",
@@ -165,5 +166,5 @@ window.onload = function() {
         ];
 
          const randomIndex = Math.floor(Math.random() * texts.length);
-    document.getElementById("random-texts").innerText = texts[randomIndex];
+    document.getElementById("description idk").innerText = texts[randomIndex];
 };
