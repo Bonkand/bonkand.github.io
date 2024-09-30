@@ -48,7 +48,7 @@ window.onload = function() {
       	"Pinacolada!",
         "Very fun!",
         "12345 is a bad password!",
-	      "password is a bad password!",
+        "password is a bad password!",
       	"Nobita",
         "...in a pineapple under the sea!",
         "...!",
@@ -83,8 +83,8 @@ window.onload = function() {
         "PC gaming since 1873!",
         "Déjà vu!",
         "Déjà vu!",
-	      "put on wax take off wax",
-	      "Rocky dad!"
+        "put on wax take off wax",
+        "Rocky dad!"
         "Got your nose!",
         "Haley loves Elan!",
         "Afraid of the big, black bat!",
