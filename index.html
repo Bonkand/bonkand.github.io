@@ -15,7 +15,25 @@
 <body class="dark-theme github">
   <div id="blinkingstars"></div>
   <div class="fullscreen">
-    <div class="background" style="background-image: url('/static/images/background.jpg');"></div>
+    <div class="background">
+        <img src="/static/images/background.jpg" id="background-image">
+    </div>
+    <script>
+      var currentMonth = new Date().getMonth();
+var currentDate = new Date().getDate();
+
+if ((currentMonth === 9 && currentDate >= 31) || (currentMonth === 10 && currentDate <= 31)) {
+    document.getElementById("background-image").src = "/static/images/halloween-background.jpg";
+} else if ((currentMonth === 11 && currentDate >= 8) || (currentMonth === 12 && currentDate <= 31) || (currentMonth === 0 && currentDate <= 2)) {
+    document.getElementById("background-image").src = "/static/images/christmas-background.jpg";
+} else if ((currentMonth === 3 && currentDate >= 20) || (currentMonth === 4 && currentDate <= 20)) {
+    document.getElementById("background-image").src = "/static/images/easter-background.jpg";
+} else if (currentMonth === 10 && currentDate === 23) {
+    document.getElementById("background-image").src = "/static/images/bday-background.jpg";
+} else {
+    document.getElementById("background-image").src = "/static/images/default-background.jpg";
+}
+    </script>
     <div class="center-object">
       <div class="container">
         <section class="me unset">
