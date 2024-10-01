@@ -39,8 +39,6 @@
             "There's some people who want it to happen, there are some people that wish it would happen, and there are some people that make it happen",
         ];
 
-        const randomIndex = Math.floor(Math.random() * texts.length);
-
 const ftexts = [
             "You can have 100 bandages, but they will never get you to 100, but one medkit will",
             "Even at 1hp you can still do 200 damage",
@@ -66,8 +64,6 @@ const ftexts = [
             "In order to heal, you gotta take some damage first",
             "Just because you're in storm, doesn't mean its game over",
         ];
-
-        const randomIndex = Math.floor(Math.random() * ftexts.length);
 
                 const mtexts = [
             "To reach the end, you must go through hell",
@@ -96,7 +92,7 @@ const ftexts = [
             "It takes one tree to make 1000 matches, but one match can burn 1000 trees",
         ];
 
-        const randomIndex = Math.floor(Math.random() * mtexts.length);
+const randomIndex = Math.floor(Math.random() * texts.length);
                 
         document.getElementById('mquotes').innerText = mtexts[randomIndex];       
         document.getElementById('fquotes').innerText = ftexts[randomIndex];  
