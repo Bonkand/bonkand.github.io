@@ -1,4 +1,4 @@
-window.onload = function() {
+{
   const ftexts = [
             "You can have 100 bandages, but they will never get you to 100hp, but one medkit will",
             "Even at 1hp you can still do 200 damage",
@@ -26,4 +26,4 @@ window.onload = function() {
         ];
         const randomIndex = Math.floor(Math.random() * texts.length);      
         document.getElementById('fquotes').innerText = ftexts[randomIndex];
-};
+}
