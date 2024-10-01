@@ -1,6 +1,6 @@
 window.onload = function() {
   const ftexts = [
-            "You can have 100 bandages, but they will never get you to 100, but one medkit will",
+            "You can have 100 bandages, but they will never get you to 100hp, but one medkit will",
             "Even at 1hp you can still do 200 damage",
             "Only you can edit your wall, if others can, well, it's not your wall",
             "if your duo loots first and revives later, it's clear where their priorities lie",
