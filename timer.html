@@ -17,13 +17,28 @@
             text-align: center;
         }
 
-         h1 {
-            background: linear-gradient(orange, purple);
-    -webkit-background-clip: text;
+        /* Keyframes for gradient animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            background: linear-gradient(to right, #F79B28, #FECE2E, #FFDE4D, #FEEA85, #FFDE4D, #FECE2E, #F79B28);
+            background-size: 300% 300%; /* Increase size for smooth animation */
+            color: transparent;
             background-clip: text;
-    -webkit-text-fill-color: transparent;
-         }
-    </style>
+            display: inline-block;
+            animation: gradientAnimation 5s ease infinite; /* Apply animation */
+        }
+ </style>
  
 </head>
 
