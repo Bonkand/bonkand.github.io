@@ -12,33 +12,30 @@
   <script src="blinkingstars.js"></script>
 <link rel="stylesheet" type="text/css" href="blinkingstars.css">
  <style>
-        body {
-            background-image: url('/static/images/background.jpg');
-            text-align: center;
-        }
+    body {
+        background-image: url('/static/images/background.jpg');
+        text-align: center;
+    }
 
-        /* Keyframes for gradient animation */
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+    /* Keyframes for gradient animation */
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 200% 50%; /* Start at the end of the gradient */
         }
+        100% {
+            background-position: 0% 50%; /* Move to the beginning of the gradient */
+        }
+    }
 
-        h1 {
-            background: linear-gradient(to right, #F79B28, #FECE2E, #FFDE4D, #FEEA85, #FFDE4D, #FECE2E, #F79B28);
-            background-size: 300% 300%; /* Increase size for smooth animation */
-            color: transparent;
-            background-clip: text;
-            display: inline-block;
-            animation: gradientAnimation 5s ease infinite; /* Apply animation */
-        }
- </style>
+    h1 {
+        background: linear-gradient(to right, #F79B28, #FECE2E, #FFDE4D, #FEEA85, #FDF9B8, #FEEA85, #FFDE4D, #FECE2E, #F79B28);
+        background-size: 200% 100%; /* Adjust size to match the new keyframes */
+        color: transparent;
+        background-clip: text;
+        display: inline-block;
+        animation: gradientAnimation 2.5s linear infinite; /* Apply animation with linear timing */
+    }
+</style>
  
 </head>
 
