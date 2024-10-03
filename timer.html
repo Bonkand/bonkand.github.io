@@ -14,19 +14,11 @@
     // Set the countdown duration (in seconds)
     const countdownDuration = 259200; // 3 days in seconds
 
-    // Check if the start time is already set in localStorage
-    let startTime = localStorage.getItem('startTime');
-    if (!startTime) {
-      // If not set, initialize it to the current time and store it
-      startTime = Date.now();
-      localStorage.setItem('startTime', startTime);
-    } else {
-      // If already set, convert it back to a number
-      startTime = parseInt(startTime);
-    }
+    // Set a fixed start time (e.g., the current time when the countdown is initiated)
+    const startTime = Date.now();
 
     // Calculate the remaining time
-    const remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - startTime) / 1000));
+    let remainingTime = countdownDuration;
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
@@ -43,9 +35,7 @@
         window.location.href = redirectURL;
       } else {
         // Update the remaining time
-        const currentTime = Math.floor((Date.now() - startTime) / 1000);
-        const newRemainingTime = Math.max(0, countdownDuration - currentTime);
-        localStorage.setItem('remainingTime', newRemainingTime); // Save the remaining time to localStorage
+        remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - startTime) / 1000));
         setTimeout(updateTimer, 1000); // Update every second
       }
     }
@@ -53,11 +43,7 @@
     // Start the timer
     updateTimer();
 
-    // Clear the countdown time from localStorage when the page is completely unloaded
-    window.addEventListener('beforeunload', function() {
-      // Do not clear the countdown time on unload to keep it persistent
-      // localStorage.removeItem('startTime'); // This line is removed
-    });
+    // No need for beforeunload event listener in this context
   </script>
 </body>
 </html>
