@@ -12,7 +12,7 @@
     const redirectURL = "https://www.example.com"; // Replace with your desired URL
 
     // Set the countdown time in seconds
-    const countdownTime = 60; // 60 seconds = 1 minute
+    let countdownTime = 60; // 60 seconds = 1 minute
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
@@ -20,6 +20,7 @@
       const minutes = Math.floor(countdownTime / 60);
       const seconds = countdownTime % 60;
 
+      // Format the time to always show two digits for seconds
       const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
       timerElement.textContent = formattedTime;
 
@@ -27,7 +28,7 @@
         // Redirect to the specified URL when the timer reaches 0
         window.location.href = redirectURL;
       } else {
-        countdownTime--;
+        countdownTime--; // Decrease the countdown time
         setTimeout(updateTimer, 1000); // Update every second
       }
     }
