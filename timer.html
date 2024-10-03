@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-time Timer with Redirect</title>
+</head>
+<body>
+  <h1>Countdown Timer</h1>
+  <p id="timer">00:00:00</p>
+
+  <script>
+    // Set the desired redirect URL
+    const redirectURL = "https://www.example.com"; // Replace with your desired URL
+
+    // Set the countdown time in seconds
+    const countdownTime = 4406400; // 60 seconds = 1 minute
+
+    // Function to update the timer and perform the redirect
+    function updateTimer() {
+      const timerElement = document.getElementById("timer");
+      const minutes = Math.floor(countdownTime / 60);
+      const seconds = countdownTime % 60;
+
+      const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+      timerElement.textContent = formattedTime;
+
+      if (countdownTime <= 0) {
+        // Redirect to the specified URL when the timer reaches 0
+        window.location.href = redirectURL;
+      } else {
+        countdownTime--;
+        setTimeout(updateTimer, 1000); // Update every second
+      }
+    }
+
+    // Start the timer
+    updateTimer();
+  </script>
+</body>
+</html>
