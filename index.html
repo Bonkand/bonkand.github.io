@@ -34,7 +34,13 @@
          display: inline-block;
             background-clip: text;
             animation: gradientAnimation 5s ease infinite; /* Apply animation */
+
+         .title-container {
+        display: flex; /* Use flexbox to align items */
+        align-items: center; /* Center items vertically */
+    }
         }
+   
  </style>
 
 <body class="dark-theme github">
@@ -66,7 +72,9 @@ if ((currentMonth === 9 && currentDate >= 31) || (currentMonth === 10 && current
           </div>
          
          <div class="unset">
+          <div class="title-container">
     <h1 class="title2 gradient">Bonkand</h1><h1 class="title"></h1>
+           </div>
     <script src="script.js"></script>
     <p class="undertitle minecraftFont dropshadow-medium" id="description idk"></p>
 </div>
