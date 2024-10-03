@@ -14,17 +14,11 @@
     // Set the countdown duration (in seconds)
     const countdownDuration = 259200; // 3 days in seconds
 
-    // Retrieve the start time from localStorage or set it if not present
-    let startTime = localStorage.getItem('startTime');
-    if (!startTime) {
-      startTime = Date.now();
-      localStorage.setItem('startTime', startTime);
-    } else {
-      startTime = parseInt(startTime);
-    }
+    // Set a fixed start time (e.g., January 1, 2023, 00:00:00 UTC)
+    const fixedStartTime = new Date('2023-01-01T00:00:00Z').getTime(); // Change this to your desired start time
 
-    // Calculate the remaining time
-    let remainingTime = countdownDuration - Math.floor((Date.now() - startTime) / 1000);
+    // Calculate the remaining time based on the fixed start time
+    let remainingTime = countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000);
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
@@ -45,15 +39,13 @@
         window.location.href = redirectURL;
       } else {
         // Update the remaining time
-        remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - startTime) / 1000));
+        remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000));
         setTimeout(updateTimer, 1000); // Update every second
       }
     }
 
     // Start the timer
     updateTimer();
-
-    // No need for beforeunload event listener in this context
   </script>
 </body>
 </html>
