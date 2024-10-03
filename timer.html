@@ -8,6 +8,8 @@
   <p id="timer">00:00:00</p>
 
   <script>
+    // Set the desired redirect URL
+    const redirectURL = "https://www.example.com"; // Replace with your desired URL
 
     // Set the countdown time in seconds
     const countdownTime = 60; // 60 seconds = 1 minute
@@ -20,6 +22,11 @@
 
       const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
       timerElement.textContent = formattedTime;
+
+      if (countdownTime <= 0) {
+        // Redirect to the specified URL when the timer reaches 0
+        window.location.href = redirectURL;
+      } else {
         countdownTime--;
         setTimeout(updateTimer, 1000); // Update every second
       }
