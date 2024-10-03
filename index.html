@@ -13,7 +13,29 @@
 <link rel="stylesheet" type="text/css" href="blinkingstars.css">
 </head>
 
-  
+  <style>
+        /* Keyframes for gradient animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .grey {
+            background: linear-gradient(to right, white, grey, white);
+            background-size: 300% 300%; /* Increase size for smooth animation */
+            color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: gradientAnimation 5s ease infinite; /* Apply animation */
+        }
+ </style>
 
 <body class="dark-theme github">
   <div id="blinkingstars"></div>
@@ -44,7 +66,7 @@ if ((currentMonth === 9 && currentDate >= 31) || (currentMonth === 10 && current
           </div>
          
          <div class="unset">
-    <h1 class="title dropshadow-small">Bonkand</h1>
+    <h1 class="title dropshadow-small gradient">Bonkand</h1>
     <script src="script.js"></script>
     <p class="undertitle minecraftFont dropshadow-medium" id="description idk"></p>
 </div>
