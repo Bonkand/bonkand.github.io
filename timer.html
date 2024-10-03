@@ -11,25 +11,41 @@
     // Set the desired redirect URL
     const redirectURL = "truth.html"; // Replace with your desired URL
 
-    // Initialize countdown time from localStorage or set to 60 seconds
-    let countdownTime = localStorage.getItem('countdownTime') ? parseInt(localStorage.getItem('countdownTime')) : 259200; // 60 seconds = 1 minute
+    // Set the countdown duration (in seconds)
+    const countdownDuration = 259200; // 3 days in seconds
+
+    // Check if the start time is already set in localStorage
+    let startTime = localStorage.getItem('startTime');
+    if (!startTime) {
+      // If not set, initialize it to the current time and store it
+      startTime = Date.now();
+      localStorage.setItem('startTime', startTime);
+    } else {
+      // If already set, convert it back to a number
+      startTime = parseInt(startTime);
+    }
+
+    // Calculate the remaining time
+    const remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - startTime) / 1000));
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
       const timerElement = document.getElementById("timer");
-      const minutes = Math.floor(countdownTime / 60);
-      const seconds = countdownTime % 60;
+      const minutes = Math.floor(remainingTime / 60);
+      const seconds = remainingTime % 60;
 
       // Format the time to always show two digits for seconds
       const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
       timerElement.textContent = formattedTime;
 
-      if (countdownTime <= 0) {
+      if (remainingTime <= 0) {
         // Redirect to the specified URL when the timer reaches 0
         window.location.href = redirectURL;
       } else {
-        countdownTime--; // Decrease the countdown time
-        localStorage.setItem('countdownTime', countdownTime); // Save the countdown time to localStorage
+        // Update the remaining time
+        const currentTime = Math.floor((Date.now() - startTime) / 1000);
+        const newRemainingTime = Math.max(0, countdownDuration - currentTime);
+        localStorage.setItem('remainingTime', newRemainingTime); // Save the remaining time to localStorage
         setTimeout(updateTimer, 1000); // Update every second
       }
     }
@@ -40,7 +56,7 @@
     // Clear the countdown time from localStorage when the page is completely unloaded
     window.addEventListener('beforeunload', function() {
       // Do not clear the countdown time on unload to keep it persistent
-      // localStorage.removeItem('countdownTime'); // This line is removed
+      // localStorage.removeItem('startTime'); // This line is removed
     });
   </script>
 </body>
