@@ -11,8 +11,8 @@
     // Set the desired redirect URL
     const redirectURL = "https://www.example.com"; // Replace with your desired URL
 
-    // Set the countdown time in seconds
-    let countdownTime = 60; // 60 seconds = 1 minute
+    // Initialize countdown time from localStorage or set to 60 seconds
+    let countdownTime = localStorage.getItem('countdownTime') ? parseInt(localStorage.getItem('countdownTime')) : 60; // 60 seconds = 1 minute
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
@@ -29,12 +29,19 @@
         window.location.href = redirectURL;
       } else {
         countdownTime--; // Decrease the countdown time
+        localStorage.setItem('countdownTime', countdownTime); // Save the countdown time to localStorage
         setTimeout(updateTimer, 1000); // Update every second
       }
     }
 
     // Start the timer
     updateTimer();
+
+    // Clear the countdown time from localStorage when the page is completely unloaded
+    window.addEventListener('beforeunload', function() {
+      // Do not clear the countdown time on unload to keep it persistent
+      // localStorage.removeItem('countdownTime'); // This line is removed
+    });
   </script>
 </body>
 </html>
