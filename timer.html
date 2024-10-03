@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Countdown Timer</h1>
-  <p id="timer">00:00:00</p>
+  <p id="timer">00:00:00:00</p> <!-- Updated to show days and hours -->
 
   <script>
     // Set the desired redirect URL
@@ -14,20 +14,30 @@
     // Set the countdown duration (in seconds)
     const countdownDuration = 259200; // 3 days in seconds
 
-    // Set a fixed start time (e.g., the current time when the countdown is initiated)
-    const startTime = Date.now();
+    // Retrieve the start time from localStorage or set it if not present
+    let startTime = localStorage.getItem('startTime');
+    if (!startTime) {
+      startTime = Date.now();
+      localStorage.setItem('startTime', startTime);
+    } else {
+      startTime = parseInt(startTime);
+    }
 
     // Calculate the remaining time
-    let remainingTime = countdownDuration;
+    let remainingTime = countdownDuration - Math.floor((Date.now() - startTime) / 1000);
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
       const timerElement = document.getElementById("timer");
-      const minutes = Math.floor(remainingTime / 60);
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(remainingTime / (24 * 3600));
+      const hours = Math.floor((remainingTime % (24 * 3600)) / 3600);
+      const minutes = Math.floor((remainingTime % 3600) / 60);
       const seconds = remainingTime % 60;
 
-      // Format the time to always show two digits for seconds
-      const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+      // Format the time to always show two digits for hours, minutes, and seconds
+      const formattedTime = `${days}:${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
       timerElement.textContent = formattedTime;
 
       if (remainingTime <= 0) {
