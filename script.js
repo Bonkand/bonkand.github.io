@@ -173,7 +173,7 @@ window.onload = function() {
          const randomIndex = Math.floor(Math.random() * texts.length);
 
   // Get the title element
-        const titleElement = document.querySelector('.title');
+        const titleElement = document.querySelector('.title2');
 
         // Get the current month
         const currentMonth = new Date().getMonth();
@@ -222,7 +222,7 @@ window.onload = function() {
         }
 
         // Update the title with the new emoji
-        titleElement.textContent = `Bonkand ${emoji}`;
+        titleElement.textContent = ` ${emoji}`;
   
     document.getElementById("description idk").innerText = texts[randomIndex];
 };
