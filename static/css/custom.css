@@ -199,11 +199,11 @@ a {
     right: .5em
 }
 
-.me .undertitle {
-    max-width: 1000px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap
+.me undertitle {
+	max-width: 1000px; 
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space: break-word;
 }
 
 footer p {
