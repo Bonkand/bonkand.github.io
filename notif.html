@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>annoy me</title>
+</head>
+<body>
+    <h1>hey! send me a message on my phone here</h1>
+    <p>Enter your message below: (send an happy bday message if it's nov 23 🙏)</p>
+    <textarea placeholder="be funny thanks" id="message" rows="5" cols="30"></textarea>
+    <br>
+    <button onclick="sendNotification()">Send Notification</button>
+
+    <script>
+        function sendNotification() {
+            const message = document.getElementById('message').value;
+            const ntfyUrl = 'https://ntfy.sh/bonktpic'; // Replace with your Ntfy topic URL
+
+            if (!message) {
+                alert('Please enter a message to send!');
+                return;
+            }
+
+            fetch(ntfyUrl, {
+                method: 'POST',
+                body: message,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error sending notification: ${response.statusText}`);
+                }
+                alert('Notification sent successfully!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while sending the notification.');
+            });
+        }
+    </script>
+</body>
+</html>
