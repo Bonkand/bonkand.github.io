@@ -475,6 +475,10 @@ form {
     white-space: nowrap
 }
 
+.btn img {
+    margin-right: 20px;
+}
+
 .btn:hover {
     filter: brightness(65%);
     transition: filter 200ms ease
