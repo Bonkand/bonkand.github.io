@@ -464,7 +464,7 @@ form {
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex; /* Changed to inline-flex for better alignment */
     font-size: 16px;
     height: 38px;
     line-height: 38px;
@@ -472,11 +472,26 @@ form {
     padding: 0 30px;
     text-align: center;
     text-decoration: none;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .btn img {
     margin-right: 20px;
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 14px; /* Adjust font size for mobile */
+        height: auto; /* Allow height to adjust based on content */
+        padding: 10px; /* Adjust padding for better touch targets */
+    }
+
+    .btn img {
+        margin-right: 10px; /* Reduce margin on mobile */
+    }
 }
 
 .btn:hover {
