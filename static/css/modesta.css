@@ -491,8 +491,6 @@ form {
 
     .btn img {
         margin-right: 10px; /* Reduce margin on mobile */
-        max-width: 25px; /* Set a smaller max-width for mobile */
-        max-height: 25px; /* Set a smaller max-height for mobile */
     }
 }
 
