@@ -799,11 +799,11 @@ form {
     filter: drop-shadow(5px 5px 0 rgba(0, 136, 204, 0.6)) brightness(50%)
 }
 .btn.prussian-dropshadow:hover {
-    filter: drop-shadow(5px 5px 0 rgba(9, 60, 87, 1)) brightness(50%)
+    filter: drop-shadow(5px 5px 0 rgba(9, 60, 87, 0.6)) brightness(50%)
 }
 
 .btn.browny-dropshadow:hover {
-    filter: drop-shadow(5px 5px 0 rgba(164, 132, 95, 1)) brightness(50%)
+    filter: drop-shadow(5px 5px 0 rgba(164, 132, 95, 0.6)) brightness(50%)
 }
 
 .btn.tumblr-dropshadow:hover {
@@ -3259,7 +3259,7 @@ form {
 
 .browny-dropshadow {
     background-color: #A4845F;
-    filter: drop-shadow(5px 5px 0 rgba(164, 132, 95, 1))
+    filter: drop-shadow(5px 5px 0 rgba(164, 132, 95, 0.6))
 }
 
 .prussian-text {
@@ -3272,7 +3272,7 @@ form {
 
 .prussian-dropshadow {
     background-color: #093C57;
-    filter: drop-shadow(5px 5px 0 rgba(9, 60, 87, 1))
+    filter: drop-shadow(5px 5px 0 rgba(9, 60, 87, 0.6))
 }
 
 
