@@ -4,7 +4,7 @@
  <meta charset="UTF-8">           
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="???" color="#CEB4A0" author="click the link NOW">
-  <title>birthday 🍰</title>
+  <title>halloween</title>
   <link href="static/css/custom.css" type="text/css" rel="stylesheet">
   <link href="static/css/modesta.css" type="text/css" rel="stylesheet">
   <link href="static/css/emojis.css" type="text/css" rel="stylesheet">
@@ -45,51 +45,70 @@
   
          <div class="unset">
           
-   <p text-align="center">I will be 1 year older in:</p>
+   <p text-align="center">Halloween in:</p>
     <h1 class="title" id="timer">0:00:00</h1>
 
          
 
-  <script>
+  To modify the provided code so that the timer ends on Halloween's day (October 31st) based on the user's timezone and restarts every year, we need to make several changes. Here’s the fixed version of the code along with detailed explanations of the changes made:
+
+```html
+<script>
     // Set the desired redirect URL
     const redirectURL = "notif"; // Replace with your desired URL
 
     // Set the countdown duration (in seconds)
-    const countdownDuration = 31708800; // 3 days in seconds
+    const countdownDuration = 365 * 24 * 3600; // 1 year in seconds
 
-    // Set a fixed start time (e.g., January 1, 2023, 00:00:00 UTC)
-    const fixedStartTime = new Date('2023-10-31T22:00:00Z').getTime(); // Change this to your desired start time
+    // Function to calculate the next Halloween date based on the user's timezone
+    function getNextHalloween() {
+        const now = new Date();
+        let year = now.getFullYear();
+        const halloweenDate = new Date(year, 9, 31); // October 31st (month is 0-indexed)
+
+        // If today is after Halloween, set the date to next year's Halloween
+        if (now > halloweenDate) {
+            year += 1;
+        }
+
+        // Return the next Halloween date in UTC
+        return new Date(year, 9, 31, 0, 0, 0).getTime();
+    }
+
+    // Set a fixed start time for the countdown to the next Halloween
+    const fixedStartTime = getNextHalloween();
 
     // Calculate the remaining time based on the fixed start time
-    let remainingTime = countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000);
+    let remainingTime = Math.floor((fixedStartTime - Date.now()) / 1000);
 
     // Function to update the timer and perform the redirect
     function updateTimer() {
-      const timerElement = document.getElementById("timer");
+        const timerElement = document.getElementById("timer");
 
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(remainingTime / (24 * 3600));
-      const hours = Math.floor((remainingTime % (24 * 3600)) / 3600);
-      const minutes = Math.floor((remainingTime % 3600) / 60);
-      const seconds = remainingTime % 60;
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(remainingTime / (24 * 3600));
+        const hours = Math.floor((remainingTime % (24 * 3600)) / 3600);
+        const minutes = Math.floor((remainingTime % 3600) / 60);
+        const seconds = remainingTime % 60;
 
-      // Format the time to always show two digits for hours, minutes, and seconds
-      const formattedTime = `${days}d ${hours < 10 ? "0" : ""}${hours}h ${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
-      timerElement.textContent = formattedTime;
+        // Format the time to always show two digits for hours, minutes, and seconds
+        const formattedTime = `${days}d ${hours < 10 ? "0" : ""}${hours}h ${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
+        timerElement.textContent = formattedTime;
 
-      if (remainingTime <= 0) {
-        // Redirect to the specified URL when the timer reaches 0
-        window.location.href = redirectURL;
-      } else {
-        // Update the remaining time
-        remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000));
-        setTimeout(updateTimer, 1000); // Update every second
-      }
+        if (remainingTime <= 0) {
+            // Redirect to the specified URL when the timer reaches 0
+            window.location.href = redirectURL;
+        } else {
+            // Update the remaining time
+            remainingTime = Math.max(0, Math.floor((fixedStartTime - Date.now()) / 1000));
+            setTimeout(updateTimer, 1000); // Update every second
+        }
     }
 
     // Start the timer
     updateTimer();
-  </script>
+</script>
+```
 <br>
 <br>
 <a href="/"><span class="emerald-text">Return to mainland!</span></a>
