@@ -485,7 +485,7 @@ form {
 @media (max-width: 600px) {
     .btn {
         font-size: 14px; /* Adjust font size for mobile */
-        height: auto; /* Allow height to adjust based on content */
+        
         padding: 10px; /* Adjust padding for better touch targets */
     }
 
