@@ -798,6 +798,11 @@ form {
 .btn.telegram-dropshadow:hover {
     filter: drop-shadow(5px 5px 0 rgba(0, 136, 204, 0.6)) brightness(50%)
 }
+.btn.prussian-dropshadow:hover {
+    filter: drop-shadow(5px 5px 0 rgba(0, 136, 204, 0.6)) brightness(50%)
+}
+
+
 
 .btn.tumblr-dropshadow:hover {
     filter: drop-shadow(5px 5px 0 rgba(53, 70, 93, 0.6)) brightness(50%)
@@ -3241,6 +3246,21 @@ form {
     background-color: red;
     filter: drop-shadow(5px 5px 0 rgba(255, 0, 0, 0.6))
 }
+
+
+.prussian-text {
+    color: #093C57
+}
+
+.prussian-bg {
+    background-color: #093C57
+}
+
+.prussian-dropshadow {
+    background-color: #093C57;
+    filter: drop-shadow(5px 5px 0 rgba(9, 60, 87, 1))
+}
+
 
 .portfolio-container {
     background-color: red;
