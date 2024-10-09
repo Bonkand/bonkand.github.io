@@ -55,23 +55,23 @@
     // Set the countdown duration (in seconds)
     const countdownDuration = 365 * 24 * 3600; // 1 year in seconds
 
-    // Function to calculate the next Halloween date based on the user's timezone
-    function getNextHalloween() {
+    // Function to calculate the next Christmas date based on the user's timezone
+    function getNextChristmas() {
         const now = new Date();
         let year = now.getFullYear();
-        const halloweenDate = new Date(year, 12, 25);
+        const christmasDate = new Date(year, 11, 25); // December 25th (month index starts from 0)
 
-        // If today is after Halloween, set the date to next year's Halloween
-        if (now > halloweenDate) {
+        // If today is after Christmas, set the date to next year's Christmas
+        if (now > christmasDate) {
             year += 1;
         }
 
-        // Return the next Halloween date in UTC
-        return new Date(year, 12, 25, 0, 0, 0).getTime();
+        // Return the next Christmas date in UTC
+        return new Date(year, 11, 25, 0, 0, 0).getTime();
     }
 
-    // Set a fixed start time for the countdown to the next Halloween
-    const fixedStartTime = getNextHalloween();
+    // Set a fixed start time for the countdown to the next Christmas
+    const fixedStartTime = getNextChristmas();
 
     // Calculate the remaining time based on the fixed start time
     let remainingTime = Math.floor((fixedStartTime - Date.now()) / 1000);
