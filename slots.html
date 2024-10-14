@@ -1,31 +1,8 @@
 <!DOCTYPE html>
-<!-- https://github.com/jcjms/slots -->
 <html>
 
 <head>
-  <title>Slot Machine</title>
-  <link rel="stylesheet" href="css/styles.css"/>
-</head>
-
-<body>
-  <div class="container">
-    <div class="slotcontainer">
-      <div class="slot">
-        <div class="symbols" id="slot1Symbols"></div>
-      </div>
-
-      <div class="slot">
-        <div class="symbols" id="slot2Symbols"></div>
-      </div>
-
-      <div class="slot">
-        <div class="symbols" id="slot3Symbols"></div>
-      </div>
-    </div>
-
-    <div style="display: flex;">
-      <button onclick="spin()">Spin</button>
-      <style>
+        <style>
         /* big credit for the design: https://codepen.io/1isten/pen/wvMdNPp */
 
 body {
@@ -78,3 +55,26 @@ body {
         const symbols = slot.querySelector('.symbols');
         const symbolHeight = symbols.querySelector('.symbol')?.clientHeight;
         </script>
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <div class="slotcontainer">
+      <div class="slot">
+        <div class="symbols" id="slot1Symbols"></div>
+      </div>
+
+      <div class="slot">
+        <div class="symbols" id="slot2Symbols"></div>
+      </div>
+
+      <div class="slot">
+        <div class="symbols" id="slot3Symbols"></div>
+      </div>
+    </div>
+
+    <div style="display: flex;">
+      <button onclick="spin()">Spin</button>
+
