@@ -1,61 +1,80 @@
-<div class="slot-main">
-  <div class="slots loop">
-    <div class="slot slot1">
-      <div class="slot-inner background1"></div>
+<!DOCTYPE html>
+<!-- https://github.com/jcjms/slots -->
+<html>
+
+<head>
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <div class="slotcontainer">
+      <div class="slot">
+        <div class="symbols" id="slot1Symbols"></div>
+      </div>
+
+      <div class="slot">
+        <div class="symbols" id="slot2Symbols"></div>
+      </div>
+
+      <div class="slot">
+        <div class="symbols" id="slot3Symbols"></div>
+      </div>
     </div>
 
-    <div class="slot slot2">
-      <div class="slot-inner background1"></div>
-    </div>
+    <div style="display: flex;">
+      <button onclick="spin()">Spin</button>
+      <style>
+        /* big credit for the design: https://codepen.io/1isten/pen/wvMdNPp */
 
-    <div class="slot slot3">
-      <div class="slot-inner background1"></div>
-    </div>
-  </div>
-  <button class="btn" onClick='myAction()'>HIT IT!</button>
-</div>
-<style>
-  body {
-  background-color: #0b0b0b;
+body {
+    background: #212121;
+    margin: 0;
+    padding: 0;
 }
-.btn {
-  position: absolute;
-  width: 40%;
-  left: 30%;
-  font-size: 20px;
-  background-color: #e8ff00;
-  font-weight: 900;
-  border: 0;
-  bottom: 20px;
-  border-radius: 5px;
-  color: #4d5400;
-}
-.slot-main {
-  display: block;
-  position: relative;
-  background-color: #0f0f0f;
-  width: 500px;
-  height: 200px;
-  margin: 0 auto;
-}
-.slots {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  </style>
 
-<script>
-  var state = false;
-function myAction() {
-  if (!this.state) {
-    document.querySelector('.slots').classList.remove('loop');
-    setTimeout(function() {
-      document.querySelector('.slots').classList.add('stop');
-    },1);
-  } else {
-    document.querySelector('.slots').classList.remove('stop');
-    document.querySelector('.slots').classList.add('loop');
-  }
-  this.state = !this.state  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-  </script>
+
+.slotcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.slot {
+    width: 100px;
+    height: 150px;
+        </style>
+        <script>
+          const slotSymbols = [
+      ['7️⃣', '💖', '♾️', '🔔', '🪙', '💸', '💎', '🍻', '🍾'],
+      ['🍎', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🍈', '🍒', '🍑'],
+    ];
+
+    function createSymbolElement(symbol) {
+      const div = document.createElement('div');
+      div.classList.add('symbol');
+      div.textContent = symbol;
+      return div;
+    }
+
+    let spun = false;
+    function spin() {
+      if (spun) {
+        reset();
+      }
+      const slots = document.querySelectorAll('.slot');
+      let completedSlots = 0;
+
+      slots.forEach((slot, index) => {
+        const symbols = slot.querySelector('.symbols');
+        const symbolHeight = symbols.querySelector('.symbol')?.clientHeight;
+        </script>
