@@ -32,6 +32,8 @@ a { text-decoration: none; }
 
 .minecraftFont {
     font-family: "Rubik Wet Paint", serif;
+  font-weight: 400;
+  font-style: normal;
     color: #CEB4A0
 }
 
