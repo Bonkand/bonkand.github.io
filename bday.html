@@ -1,7 +1,10 @@
 
 <html>
 <head>
- <meta charset="UTF-8">           
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+ <meta charset="UTF-8">                    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="???" color="#CEB4A0" author="click the link NOW">
   <title>birthday 🍰</title>
@@ -11,9 +14,9 @@
   <link rel="icon" type = "image/x-icon" href="https://em-content.zobj.net/source/samsung/395/head-shaking-vertically_1f642-200d-2195-fe0f.png">
   <script src="blinkingstars.js"></script>
 <link rel="stylesheet" type="text/css" href="blinkingstars.css">
- <style>
+<style>
     body {
-        background-image: url('/static/images/background.jpg');
+        background-color: #181818;
         text-align: center;
     }
 
@@ -27,7 +30,17 @@
         }
     }
 
-    h1 {
+    .title {
+       text-align: center;
+        height: 500px;
+     line-height: 500px;
+
+  align-items: center;
+  /* align vertical */
+        font-family: "Festive", cursive;
+        margin: 0;
+        display: inline-block;
+        font-size: 3em;
         background: linear-gradient(to right, #F79B28, #FECE2E, #FFDE4D, #FEEA85, #FDF9B8, #FEEA85, #FFDE4D, #FECE2E, #F79B28);
         background-size: 200% 100%; /* Adjust size to match the new keyframes */
         color: transparent;
@@ -45,9 +58,10 @@
   
          <div class="unset">
           
-   <p text-align="center">I will be 1 year older in:</p>
-    <h1 class="title" id="timer">0:00:00</h1>
-
+   <h1 text-align="center">I will be 1 year older in:</h1>
+          <div class="title-container">
+    <h1 class="title" id="timer">0:00:00:00</h1>
+           </div>
          
 
   <script>
