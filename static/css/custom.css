@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "minecraftFont";
+    font-family: "Rubik Wet Paint", serif;
     src: url("/static/fonts/minecraftFont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal
@@ -31,7 +31,7 @@ animation-iteration-count: infinite;
 a { text-decoration: none; }
 
 .minecraftFont {
-    font-family: "minecraftFont";
+    font-family: "Rubik Wet Paint", serif;
     color: #CEB4A0
 }
 
