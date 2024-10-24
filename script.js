@@ -10,7 +10,7 @@ window.onload = function() {
         "Awesome!",
         "May contain nuts!",
         "One of a kind!",
-        "Not on steam!",
+        "Not on Steam!",
         "Oh man!",
         "Pixels!",
         "Now with difficulty!",
