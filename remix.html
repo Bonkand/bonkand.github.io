@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="blinkingstars.css">
  <style>
     body {
-        background-image: url('/static/images/background.jpg');
+        background-color: black;
         text-align: center;
     }
 
@@ -28,7 +28,9 @@
     }
 
     .title {
-        font-size: 300px;
+        margin: 0;
+        display: inline-block;
+        font-size: 4em;
         background: linear-gradient(to right, #F79B28, #FECE2E, #FFDE4D, #FEEA85, #FDF9B8, #FEEA85, #FFDE4D, #FECE2E, #F79B28);
         background-size: 200% 100%; /* Adjust size to match the new keyframes */
         color: transparent;
@@ -47,9 +49,9 @@
          <div class="unset">
           
    <p text-align="center">Fortnite Remix:</p> <br> <br> 
-    <p class="title" id="timer">0:00:00</h1>
-
-         
+          <div class="title-container">
+    <h1 class="title" id="timer">0:00:00:00</h1>
+           </div>         
 
   <script>
     // Set the desired redirect URL
@@ -91,9 +93,6 @@
     // Start the timer
     updateTimer();
   </script>
-<br>
-<br>
-<a href="/"><span class="emerald-text">Return to mainland!</span></a>
 
  </div>
         </section>
