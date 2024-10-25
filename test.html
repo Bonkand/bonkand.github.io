@@ -92,101 +92,81 @@
          
 
  			<script>
-var SCREEN_WIDTH = window.innerWidth,
-    SCREEN_HEIGHT = window.innerHeight,
-    mousePos = {
-        x: 400,
-        y: 300
-    },
-    // create canvas
-    canvas = document.createElement('canvas'),
-    context = canvas.getContext('2d'),
-    particles = [],
-    rockets = [],
-    MAX_PARTICLES = 400,
-    colorCode = 0;
- 
-// Today's date
-var today = new Date();
- 
 // Check if today's date is October 25th
-if (today.getDate() === 25 && today.getMonth() === 9) { // October is month 9 (0-indexed)
-    // Initialize fireworks automatically
-    initFireworks();
- 
-    // Update mouse position
-    jQuery(document).mousemove(function(e) {
-        e.preventDefault();
-        mousePos = {
-            x: e.clientX,
-            y: e.clientY
-        };
-    });
- 
-    // Launch more rockets!!!
-    jQuery(document).mousedown(function(e) {
-        for (var i = 0; i < 5; i++) {
-            launchFrom(Math.random() * SCREEN_WIDTH * 2 / 3 + SCREEN_WIDTH / 6);
+const today = new Date();
+if (today.getMonth() === 9 && today.getDate() === 25) {
+  // Script execution begins here (only on October 25th)
+
+  let canvas = document.querySelector('#canvas');
+  let c = canvas.getContext('2d');
+  let numberOfParticles = 90;
+  let density = 2;
+  let fireworkGravity = 0.2;
+  let particlesGravity = 0.08;
+  let explosionRadiusRange = { max: 5, min: -5 };
+  let fireworkRandomXPathRange = { max: 2, min: -2 };
+  let fireworkRadius = 4;
+  let particlesLifespan = 10;
+  let fireworksArrayLength = 50;
+  let particleRadiusRange = { max: 3, min: 1 };
+  let fireworkOnXaxis = 2;
+
+  // Helper functions
+  function random(max, min) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function circle(x, y, radius, color) {
+    c.fillStyle = color;
+    c.beginPath();
+    c.arc(x, y, radius, 0, Math.PI * 2);
+    c.fill();
+  }
+
+  // Particle class
+  class Particle {
+    constructor(x, y, firework, color) {
+      this.x = x;
+      this.y = y;
+      this.lifeSpan = random(1000, 50);
+      this.firework = firework;
+      this.radius = random(particleRadiusRange.max, particleRadiusRange.min);
+      this.color = color;
+      this.history = [];
+      this.tail = 5;
+
+      if (this.firework) {
+        this.vx = random(fireworkOnXaxis, -fireworkOnXaxis);
+        this.vy = random(-9, -15);
+        this.gravity = fireworkGravity;
+      } else {
+        this.vy = random(explosionRadiusRange.max, explosionRadiusRange.min);
+        this.vx = random(explosionRadiusRange.max, explosionRadiusRange.min);
+        this.vy *= random(3, 2);
+        this.vx *= random(3, 2);
+        this.gravity = particlesGravity;
+        if (random(600, 1) < 200) {
+          this.vx *= random(2, 1);
+          this.vy *= random(2, 1);
         }
-    });
- 
-    function initFireworks() {
-        jQuery(".fireworks").append(canvas);
-        canvas.width = SCREEN_WIDTH;
-        canvas.height = SCREEN_HEIGHT;
-        setInterval(launch, 800);
-        setInterval(loop, 1000 / 50);
+      }
     }
- 
-    function launch() {
-        launchFrom(mousePos.x);
+
+    done() {
+      return this.lifeSpan < 0;
     }
- 
-    function launchFrom(x) {
-        if (rockets.length < 10) {
-            var rocket = new Rocket(x);
-            rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
-            rocket.vel.y = Math.random() * -3 - 4;
-            rocket.vel.x = Math.random() * 6 - 3;
-            rocket.size = 8;
-            rocket.shrink = 0.999;
-            rocket.gravity = 0.01;
-            rockets.push(rocket);
-        }
-    }
- 
-    function loop() {
-        // Update screen size
-        if (SCREEN_WIDTH != window.innerWidth) {
-            canvas.width = SCREEN_WIDTH = window.innerWidth;
-        }
-        if (SCREEN_HEIGHT != window.innerHeight) {
-            canvas.height = SCREEN_HEIGHT = window.innerHeight;
-        }
- 
-        // Clear canvas
-        context.fillStyle = "rgba(0, 0, 0, 0.05)";
-        context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
- 
-        var existingRockets = [];
-        for (var i = 0; i < rockets.length; i++) {
-            // Update and render
-            rockets[i].update();
-            rockets[i].render(context);
- 
-            // Calculate distance with Pythagoras
-            var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));
- 
-            // Random chance of 1% if rockets is above the middle
-            var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
-        }
-    }
-}
+
+    draw() {
+      circle(
+        this.x,
+        this.y,
+        this.
 </script>
 
 
 <br>
 <br>
+                  <canvas id="canvas"></canvas>
 <a href="/"><span class="emerald-text">Return to mainland!</span></a>
 
  </div>
