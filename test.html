@@ -93,7 +93,6 @@
          
 
   <script>
-    
         var SCREEN_WIDTH = window.innerWidth,
             SCREEN_HEIGHT = window.innerHeight,
             canvas = document.getElementById("fireworksCanvas"),
@@ -101,28 +100,19 @@
             // Rest of the fireworks script goes here... (from your first message)
 
         // Set the countdown duration (in seconds)
-        const countdownDuration = 31708800; // 3 days in seconds
-
-        // Set a fixed start time (e.g., January 1, 2023, 00:00:00 UTC)
-        const fixedStartTime = new Date('2023-10-25T19:40:00Z').getTime(); // Change this to your desired start time
-
-        // Calculate the remaining time based on the fixed start time
-        let remainingTime = countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000);
+        const countdownDuration = 600; // 10 minutes in seconds
 
         // Function to update the timer and display fireworks
         function updateTimer() {
             const timerElement = document.getElementById("timer");
 
-            // Calculate days, hours, minutes, and seconds
-            const days = Math.floor(remainingTime / (24 * 3600));
-            const hours = Math.floor((remainingTime % (24 * 3600)) / 3600);
-            const minutes = Math.floor((remainingTime % 3600)   
+            // Calculate minutes and seconds
+            const minutes = Math.floor(remainingTime   
  / 60);
-            const seconds = remainingTime % 60;   
+            const seconds = remainingTime % 60;
 
-
-            // Format the time to always show two digits for hours, minutes, and seconds
-            const formattedTime = `${days}d ${hours < 10 ? "0" : ""}${hours}h ${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
+            // Format the time to always show two digits for minutes and seconds
+            const formattedTime = `${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
             timerElement.textContent = formattedTime;
 
             if (remainingTime <= 0) {
@@ -134,15 +124,14 @@
                 timerElement.style.display = "none"; // Hide the timer after fireworks start
             } else {
                 // Update the remaining time
-                remainingTime = Math.max(0, countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000));
+                remainingTime = Math.max(0, countdownDuration - 1);
                 setTimeout(updateTimer, 1000); // Update every second
             }
         }
 
         // Start the timer
         updateTimer();
-    
-  </script>
+    </script>
 <br>
 <br>
 <a href="/"><span class="emerald-text">Return to mainland!</span></a>
