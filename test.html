@@ -94,43 +94,45 @@
 
   <script>
         var SCREEN_WIDTH = window.innerWidth,
-            SCREEN_HEIGHT = window.innerHeight,
-            canvas = document.getElementById("fireworksCanvas"),
-            context = canvas.getContext('2d'),
-            // Rest of the fireworks script goes here... (from your first message)
+    SCREEN_HEIGHT = window.innerHeight,
+    canvas = document.getElementById("fireworksCanvas"),
+    context = canvas.getContext('2d'),
+    // Rest of the fireworks script goes here... (from your first message)
+ 
+// Set the countdown duration (in seconds)
+let countdownDuration = 10 * 60; // 10 minutes in seconds
+ 
+// Function to update the timer and display fireworks
+function updateTimer() {
+    const timerElement = document.getElementById("timer");
+ 
+    // Calculate minutes and seconds
+    const minutes = Math.floor(countdownDuration / 60);
+    const seconds = countdownDuration % 60;
+ 
+    // Format the time to always show two digits for minutes and seconds
+    const formattedTime = `${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
+    timerElement.textContent = formattedTime;
+ 
+    if (countdownDuration <= 0) {
+        // Start the fireworks animation when the timer reaches 0
+        canvas.width = SCREEN_WIDTH;
+        canvas.height = SCREEN_HEIGHT;
+        launch(); // Call the launch function from your fireworks script
+        setInterval(loop, 1000 / 50); // Start the animation loop
+        timerElement.style.display = "none"; // Hide the timer after fireworks start
+    } else {
+        // Update the remaining time
+        countdownDuration--;
+        setTimeout(updateTimer, 1000); // Update every second
+    }
+}
+ 
+// Start the timer
+updateTimer();
 
-        // Set the countdown duration (in seconds)
-        const countdownDuration = 10 * 60; // 10 minutes in seconds
 
-        // Function to update the timer and display fireworks
-        function updateTimer() {
-            const timerElement = document.getElementById("timer");
-
-            // Calculate minutes and seconds
-            const minutes = Math.floor(countdownDuration   
- / 60);
-            const seconds = countdownDuration % 60;
-
-            // Format the time to always show two digits for minutes and seconds
-            const formattedTime = `${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
-            timerElement.textContent = formattedTime;
-
-            if (countdownDuration <= 0) {
-                // Start the fireworks animation when the timer reaches 0
-                canvas.width = SCREEN_WIDTH;
-                canvas.height = SCREEN_HEIGHT;
-                launch(); // Call the launch function from your fireworks script
-                setInterval(loop, 1000 / 50); // Start the animation loop
-                timerElement.style.display = "none"; // Hide the timer after fireworks start
-            } else {
-                // Update the remaining time
-                countdownDuration--;
-                setTimeout(updateTimer, 1000); // Update every second
-            }
-        }
-
-        // Start the timer
-        updateTimer();
+  
     </script>
 <br>
 <br>
