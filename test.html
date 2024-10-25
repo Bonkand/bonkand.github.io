@@ -91,104 +91,99 @@
            </div>
          
 
- 		<script>
+ 			<script>
 var SCREEN_WIDTH = window.innerWidth,
-  SCREEN_HEIGHT = window.innerHeight,
-  mousePos = {
-    x: 400,
-    y: 300
-  },
- 
-  // create canvas
-  canvas = document.createElement('canvas'),
-  context = canvas.getContext('2d'),
-  particles = [],
-  rockets = [],
-  MAX_PARTICLES = 400,
-  colorCode = 0;
+    SCREEN_HEIGHT = window.innerHeight,
+    mousePos = {
+        x: 400,
+        y: 300
+    },
+    // create canvas
+    canvas = document.createElement('canvas'),
+    context = canvas.getContext('2d'),
+    particles = [],
+    rockets = [],
+    MAX_PARTICLES = 400,
+    colorCode = 0;
  
 // Today's date
 var today = new Date();
  
 // Check if today's date is October 25th
 if (today.getDate() === 25 && today.getMonth() === 9) { // October is month 9 (0-indexed)
+    // Initialize fireworks automatically
+    initFireworks();
  
-  // init
-  jQuery(document).ready(function() {
-    jQuery(".trigger_fworks").click(function() {
-      jQuery(".fireworks").toggle(); // Toggle visibility of fireworks
-      if (jQuery(".fireworks").children('canvas').length === 0) { // Check if canvas is already appended
+    // Update mouse position
+    jQuery(document).mousemove(function(e) {
+        e.preventDefault();
+        mousePos = {
+            x: e.clientX,
+            y: e.clientY
+        };
+    });
+ 
+    // Launch more rockets!!!
+    jQuery(document).mousedown(function(e) {
+        for (var i = 0; i < 5; i++) {
+            launchFrom(Math.random() * SCREEN_WIDTH * 2 / 3 + SCREEN_WIDTH / 6);
+        }
+    });
+ 
+    function initFireworks() {
         jQuery(".fireworks").append(canvas);
         canvas.width = SCREEN_WIDTH;
         canvas.height = SCREEN_HEIGHT;
         setInterval(launch, 800);
         setInterval(loop, 1000 / 50);
-      }
-    });
-  });
- 
-  // update mouse position
-  jQuery(document).mousemove(function(e) {
-    e.preventDefault();
-    mousePos = {
-      x: e.clientX,
-      y: e.clientY
-    };
-  });
- 
-  // launch more rockets!!!
-  jQuery(document).mousedown(function(e) {
-    for (var i = 0; i < 5; i++) {
-      launchFrom(Math.random() * SCREEN_WIDTH * 2 / 3 + SCREEN_WIDTH / 6);
-    }
-  });
- 
-  function launch() {
-    launchFrom(mousePos.x);
-  }
- 
-  function launchFrom(x) {
-    if (rockets.length < 10) {
-      var rocket = new Rocket(x);
-      rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
-      rocket.vel.y = Math.random() * -3 - 4;
-      rocket.vel.x = Math.random() * 6 - 3;
-      rocket.size = 8;
-      rocket.shrink = 0.999;
-      rocket.gravity = 0.01;
-      rockets.push(rocket);
-    }
-  }
- 
-  function loop() {
-    // update screen size
-    if (SCREEN_WIDTH != window.innerWidth) {
-      canvas.width = SCREEN_WIDTH = window.innerWidth;
-    }
-    if (SCREEN_HEIGHT != window.innerHeight) {
-      canvas.height = SCREEN_HEIGHT = window.innerHeight;
     }
  
-    // clear canvas
-    context.fillStyle = "rgba(0, 0, 0, 0.05)";
-    context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
- 
-    var existingRockets = [];
- 
-    for (var i = 0; i < rockets.length; i++) {
-      // update and render
-      rockets[i].update();
-      rockets[i].render(context);
- 
-      // calculate distance with Pythagoras
-      var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));
- 
-      // random chance of 1% if rockets is above the middle
-      var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
+    function launch() {
+        launchFrom(mousePos.x);
     }
-  }
+ 
+    function launchFrom(x) {
+        if (rockets.length < 10) {
+            var rocket = new Rocket(x);
+            rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
+            rocket.vel.y = Math.random() * -3 - 4;
+            rocket.vel.x = Math.random() * 6 - 3;
+            rocket.size = 8;
+            rocket.shrink = 0.999;
+            rocket.gravity = 0.01;
+            rockets.push(rocket);
+        }
+    }
+ 
+    function loop() {
+        // Update screen size
+        if (SCREEN_WIDTH != window.innerWidth) {
+            canvas.width = SCREEN_WIDTH = window.innerWidth;
+        }
+        if (SCREEN_HEIGHT != window.innerHeight) {
+            canvas.height = SCREEN_HEIGHT = window.innerHeight;
+        }
+ 
+        // Clear canvas
+        context.fillStyle = "rgba(0, 0, 0, 0.05)";
+        context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+ 
+        var existingRockets = [];
+        for (var i = 0; i < rockets.length; i++) {
+            // Update and render
+            rockets[i].update();
+            rockets[i].render(context);
+ 
+            // Calculate distance with Pythagoras
+            var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));
+ 
+            // Random chance of 1% if rockets is above the middle
+            var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
+        }
+    }
 }
 </script>
+
 
 <br>
 <br>
