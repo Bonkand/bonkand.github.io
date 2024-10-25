@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Firework Animation</title>
-  <style>
-    body {
-      background-color: black;
-    }
+    <title>Firework Animation</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
 
-    .firework {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 100px solid #ff0000;
-      -webkit-animation: explode 2s;
-      animation: explode 2s;
-    }
+        .firework {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #ff0000; /* Change color as needed */
+            animation: explode 2s;
+        }
 
-    @-webkit-keyframes explode {
-      0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 0;
-      }
-    }
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        // Check if today is October 25th
+        const today = new Date();
+        const isOctober25th = today.getMonth() === 9 && today.getDate() === 25;
 
-    @keyframes explode {
-      0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 0;
-      }
-    }
-  </style>
+        if (isOctober25th) {
+            // Create multiple fireworks
+            const container = document.body;
+            for (let i = 0; i < 10; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                firework.style.left = Math.random() * 100 + 'vw';
+                firework.style.top = Math.random() * 100 + 'vh';
+                container.appendChild(firework);
+            }
+        }
+    </script>
 </head>
 <body>
-  <div class="firework"></div>
 </body>
 </html>
