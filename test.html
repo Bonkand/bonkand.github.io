@@ -91,35 +91,36 @@
            </div>
          
 
-  <script>
+ 	<script>
 const redirectURL = "notif"; // Replace with your desired URL
-
+ 
 // Set the countdown duration (in seconds)
 const countdownDuration = 31708800; // 3 days in seconds
-
+ 
 // Set a fixed start time (e.g., January 1, 2023, 00:00:00 UTC)
-const fixedStartTime = new Date('2023-10-24T14:27:00Z').getTime(); // Change this to your desired start time
-
+const fixedStartTime = new Date('2023-10-24T14:37:00Z').getTime(); // Change this to your desired start time
+ 
 // Calculate the remaining time based on the fixed start time
 let remainingTime = countdownDuration - Math.floor((Date.now() - fixedStartTime) / 1000);
-
+ 
 // Function to update the timer and perform actions
 function updateTimer() {
   const timerElement = document.getElementById("timer");
-
+ 
   // Calculate days, hours, minutes, and seconds
   const days = Math.floor(remainingTime / (24 * 3600));
   const hours = Math.floor((remainingTime % (24 * 3600)) / 3600);
   const minutes = Math.floor((remainingTime % 3600) / 60);
   const seconds = remainingTime % 60;
-
+ 
   // Format the time to always show two digits for hours, minutes, and seconds
   const formattedTime = `${days}d ${hours < 10 ? "0" : ""}${hours}h ${minutes < 10 ? "0" : ""}${minutes}m ${seconds < 10 ? "0" : ""}${seconds}s`;
   timerElement.textContent = formattedTime;
-
+ 
   if (remainingTime <= 0) {
     // Redirect to the specified URL when the timer reaches 0
-    
+    window.location.href = redirectURL;
+ 
     // Start the fireworks animation upon reaching zero
     startFireworks();
   } else {
@@ -128,15 +129,36 @@ function updateTimer() {
     setTimeout(updateTimer, 1000); // Update every second
   }
 }
-
-// Function to initiate the firework animation (assuming you have the code)
+ 
+// Function to initiate the firework animation
 function startFireworks() {
-  // Add your existing firework animation code here (e.g., canvas setup, particle creation, loop function)
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+ 
+  function drawFirework(x, y) {
+    const particles = 100;
+    for (let i = 0; i < particles; i++) {
+      const angle = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * 100;
+      const particleX = x + Math.cos(angle) * radius;
+      const particleY = y + Math.sin(angle) * radius;
+      ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      ctx.beginPath();
+      ctx.arc(particleX, particleY, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+ 
+  // Create fireworks at the center of the screen
+  drawFirework(canvas.width / 2, canvas.height / 2);
 }
-
+ 
 // Start the timer
 updateTimer();
-  </script>
+</script>
 <br>
 <br>
 <a href="/"><span class="emerald-text">Return to mainland!</span></a>
