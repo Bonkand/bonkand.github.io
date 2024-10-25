@@ -310,6 +310,29 @@ Rocket.prototype.render = function(c) {
 
     
     </script>
+
+	<script>
+  var timeoutID;
+
+  function startTimeout() {
+    timeoutID = setTimeout(function() {
+      window.location.href = 'notif'; // Replace with your desired URL
+    }, 30000); // 60 seconds (1 minute)
+  }
+
+  function resetTimeout() {
+    clearTimeout(timeoutID);
+    startTimeout();
+  }
+
+  // Start the timeout when the page loads
+  startTimeout();
+
+  // Reset the timeout on user activity
+  window.addEventListener('mousemove', resetTimeout);
+  window.addEventListener('keydown', resetTimeout);
+  window.addEventListener('click', resetTimeout);
+</script>
 	
 <br>
 <br>
