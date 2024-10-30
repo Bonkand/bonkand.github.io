@@ -18,8 +18,10 @@
     body {
         background-color: #181818;
         text-align: center;
+        margin: 0; /* Added to remove default body margin */
+        height: 100vh; /* Ensures the body takes full viewport height */
     }
-
+ 
     /* Keyframes for gradient animation */
     @keyframes gradientAnimation {
         0% {
@@ -29,38 +31,37 @@
             background-position: 0% 50%; /* Move to the beginning of the gradient */
         }
     }
-
- .container {
-  width: 500%;
-  height: 500%;
-
-  background: #000000;
-  --gap: 5em;
-  --line: 1px;
-  --color: rgba(255, 255, 255, 0.2);
-
-  background-image: linear-gradient(
-      -270deg,
-      transparent calc(var(--gap) - var(--line)),
-      var(--color) calc(var(--gap) - var(--line) + 1px),
-      var(--color) var(--gap)
-    ),
-    linear-gradient(
-      0deg,
-      transparent calc(var(--gap) - var(--line)),
-      var(--color) calc(var(--gap) - var(--line) + 1px),
-      var(--color) var(--gap)
-    );
-  background-size: var(--gap) var(--gap);
-}
-
+ 
+    .container {
+        width: 100vw; /* Ensures full viewport width */
+        height: 100vh; /* Ensures full viewport height */
+        background: #000000;
+        --gap: 5em;
+        --line: 1px;
+        --color: rgba(255, 255, 255, 0.2);
+ 
+        background-image: linear-gradient(
+            -270deg,
+            transparent calc(var(--gap) - var(--line)),
+            var(--color) calc(var(--gap) - var(--line) + 1px),
+            var(--color) var(--gap)
+        ),
+        linear-gradient(
+            0deg,
+            transparent calc(var(--gap) - var(--line)),
+            var(--color) calc(var(--gap) - var(--line) + 1px),
+            var(--color) var(--gap)
+        );
+        background-size: var(--gap) var(--gap);
+        background-repeat: no-repeat; /* Prevents background from repeating */
+        background-position: center; /* Centers the background */
+    }
+ 
     .title {
-       text-align: center;
+        text-align: center;
         height: 500px;
-     line-height: 500px;
-
-  align-items: center;
-  /* align vertical */
+        line-height: 500px;
+ 
         font-family: "Festive", cursive;
         margin: 0;
         display: inline-block;
@@ -69,37 +70,39 @@
         background-size: 200% 100%; /* Adjust size to match the new keyframes */
         color: transparent;
         background-clip: text;
-        display: inline-block;
         animation: gradientAnimation 2.5s linear infinite; /* Apply animation with linear timing */
     }
-
- .trigger_fworks {
-  width: 275px;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px 10px;
-  margin: 30px auto;
-  background: blue;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.fireworks {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  height: 100vh;
-  width: 100vw;
-}
-
-.fireworks canvas {
-  top: 0px;
-  position: absolute;
-  z-index: 1;
-}
+ 
+    .trigger_fworks {
+        width: 275px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px 10px;
+        margin: 30px auto;
+        background: blue;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+ 
+    .fireworks {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        height: 100vh;
+        width: 100vw;
+    }
+ 
+    .fireworks canvas {
+        top: 0px;
+        position: absolute;
+        z-index: 1;
+    }
 </style>
+
+
  
 </head>
 
