@@ -32,31 +32,7 @@
         }
     }
  
-    .container {
-        width: 100vw; /* Ensures full viewport width */
-        height: 100vh; /* Ensures full viewport height */
-        background: #000000;
-        --gap: 5em;
-        --line: 1px;
-        --color: rgba(255, 255, 255, 0.2);
- 
-        background-image: linear-gradient(
-            -270deg,
-            transparent calc(var(--gap) - var(--line)),
-            var(--color) calc(var(--gap) - var(--line) + 1px),
-            var(--color) var(--gap)
-        ),
-        linear-gradient(
-            0deg,
-            transparent calc(var(--gap) - var(--line)),
-            var(--color) calc(var(--gap) - var(--line) + 1px),
-            var(--color) var(--gap)
-        );
-        background-size: var(--gap) var(--gap);
-        background-repeat: no-repeat; /* Prevents background from repeating */
-        background-position: center; /* Centers the background */
-    }
- 
+    
     .title {
         text-align: center;
         height: 500px;
