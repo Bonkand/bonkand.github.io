@@ -115,7 +115,7 @@ window.onload = function() {
         "Not to be played while driving",
         "You're going too fast!",
         "Levels matter!",
-        "TH 10 in CoC",
+        "TH 11 in CoC",
         "All rumors are true!",
         "I need more context.",
         "Ahhhhhh!",
@@ -187,7 +187,7 @@ window.onload = function() {
         let emoji;
         switch (currentMonth) {
             case 0:  // January
-                emoji = '❄️';
+                emoji = '🎆';
                 break;
             case 1:  // February
                 emoji = '❤️';
