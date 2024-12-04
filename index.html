@@ -112,7 +112,42 @@ if ((currentMonth === 9 && currentDate >= 31) || (currentMonth === 10 && current
 
   <section class="container" id="information">
 
+
+   
     <div class="box-container">
+      <h1 class="title discord-text">What am I doin?</h1><br>
+      <div class="info-container status">
+        <img src="https://api.statusbadges.me/badge/status/664103194162495488?simple=true&style=for-the-badge" alt="status">
+ <img src="https://api.statusbadges.me/badge/playing/664103194162495488?style=for-the-badge" alt="playing"> <br>
+<a href="https://api.statusbadges.me/openspotify/664103194162495488" target="_blank" rel="noopener"><img src="https://api.statusbadges.me/badge/spotify/664103194162495488?style=for-the-badge" alt="spotify"></a>
+
+        </p>
+        <br>
+        <p style="text-align: center">Type in the box below to send me a notification</p><br>
+        <div class="buttons">
+          <textarea cols="50" id="ntfy-input" placeholder="I won't know who sent it, be funny ty"></textarea>
+        </div>
+        <div class="buttons">
+          <button onclick="javascript:sendNotification()" style="margin-left:10px;">Send</button>
+          <script>
+            // both
+            function send(message) {
+              let r = new XMLHttpRequest();
+              r.open("POST", "https://ntfy.sh/bonktpic", true);
+              r.setRequestHeader("Content-Type", "text/plain");
+              r.send(message);
+            }
+
+            // send notification
+            let ntfyInput = document.getElementById("ntfy-input");
+            function sendNotification() {
+              if (ntfyInput.value.length <= 0) return;  // Corrected this line
+              send(ntfyInput.value);  // Call send only if the input is not empty
+              ntfyInput.value = "";    // Clear the input after sending
+            }
+          </script>
+        </div>
+       
       <h1 class="title lemon-text">Me:</h1>
       <div class="info-container">
         <p>
