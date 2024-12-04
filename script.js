@@ -217,7 +217,7 @@ window.onload = function() {
                 emoji = '🎃';
                 break;
             case 10: // November
-                emoji = '🦃';
+                emoji = '🥧';
                 break;
             case 11: // December
                 emoji = '🎄';
