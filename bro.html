@@ -85,8 +85,7 @@
   
 
 <body>
- <audio id="my_audio" src="https://files.catbox.moe/b0hwrh.mp3" loop="loop"></audio>
-  <div class="container">
+ <div class="container">
          <div class="unset">
           
    <h1 text-align="center"><span class="white-text">Bro will be 1 year older in:</span></h1>
@@ -136,6 +135,28 @@
     // Start the timer
     updateTimer();
   </script>
+          
+<audio id="myAudio">
+  <source src="https://files.catbox.moe/b0hwrh.mp3" type="audio/mp3">
+  <source src="https://files.catbox.moe/b0hwrh.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<button onclick="playAudio()" type="button">🕺🪩🕺</button>
+
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+
 <br>
 <br>
 <a href="/"><span class="emerald-text">Return to mainland!</span></a>
