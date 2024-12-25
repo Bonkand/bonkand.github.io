@@ -85,7 +85,7 @@
   
 
 <body>
- <audio src="https://files.catbox.moe/y4x28k.m4a" autoplay></audio>
+ <audio id="my_audio" src="https://files.catbox.moe/y4x28k.m4a" loop="loop"></audio>
   <div class="container">
          <div class="unset">
           
@@ -96,6 +96,7 @@
          
 
   <script>
+   window.onload = function() { document.getElementById("my_audio").play(); }
     // Set the desired redirect URL
     const redirectURL = "static/videos"; // Replace with your desired URL
 
