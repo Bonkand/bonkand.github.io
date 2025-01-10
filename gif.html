@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Rainbow Border Line GIF</title>
-</head>
-<body>
-
-  <script>
-    // Function to create a new image element and set its source to the GIF URL
-    function createGIFImage() {
-      var img = document.createElement('img');
-      img.src = 'https://media.tenor.com/images/17203048/raw'; // Replace with the actual GIF URL
-      return img;
-    }
-
-    // Create and append 20 GIF images to the document body
-    for (var i = 0; i < 20; i++) {
-      var gifImage = createGIFImage();
-      document.body.appendChild(gifImage);
-    }
-  </script>
-
-</body>
-</html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <title>Rainbow Border Line GIF</title>
+	</head>
+	<body>
+	 
+	  <script>
+	    // Function to create a new image element and set its source to the GIF URL
+	    function createGIFImage() {
+	      var img = document.createElement('img');
+	      img.src = 'https://media.giphy.com/media/3o7aD2sa1e2h6Yy8IY/giphy.gif'; // Updated to a valid GIF URL
+	      img.alt = 'Rainbow GIF'; // Added alt attribute for accessibility
+	      img.style.width = '100px'; // Set a width for better visibility
+	      return img;
+	    }
+	 
+	    // Create and append 20 GIF images to the document body
+	    for (var i = 0; i < 20; i++) {
+	      var gifImage = createGIFImage();
+	      document.body.appendChild(gifImage);
+	    }
+	  </script>
+	 
+	</body>
+	</html>
