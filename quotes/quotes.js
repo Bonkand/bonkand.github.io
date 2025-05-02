@@ -3,6 +3,9 @@ window.onload = function() {
                 const mtexts = [
             "To reach the end, you must go through hell",
             "You can't expect to get diamonds if you don't even mine",
+            "You aren't sacared of death, you're scared of losing everything",
+            "Don't be with a monster and not expect to lose a heart",
+            "Just because it heals you, doesn't mean it can't hurt you",
             "Even if it's rare doesn't mean it's useful",
             "A wooden pickaxe doesn't look useful, but without it nothing is possible",
             "You can give them everything you have but they'll disappear",
